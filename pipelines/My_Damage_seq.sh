@@ -46,7 +46,7 @@ bedtools getfasta -fi /cta/groups/adebali/data/reference_genomes/human/gencode/1
 
 #	Downsampling
 
-#	The 10_${1}_cutadapt_sorted_plus_dipyrimidines.bed and 10_${1}_cutadapt_sorted_minus_dipyrimidines.bed are downlampled externally.
+#	The 10_${1}_cutadapt_sorted_plus_dipyrimidines.bed and 10_${1}_cutadapt_sorted_minus_dipyrimidines.bed are downsampled externally.
 
 # adding more information 
 
