@@ -27,7 +27,7 @@ sort -u -k1,1 -k2,2n -k3,3n $DIR/$NAME/4_${NAME}_edited.bed > $DIR/$NAME/4_${NAM
 
 #	Downsampling
 
-#	The 4_${NAME}_edited_sorted.bed is downlampled externally.
+#	The 4_${NAME}_edited_sorted.bed is downsampled externally.
 
 sort -k1,1 -k2,2n $DIR/$NAME/SPO_${NAME}_18M_Melsubsampled.bed > $DIR/$NAME/SPO_${NAME}_sorted_18M_Melsubsampled.bed
 
