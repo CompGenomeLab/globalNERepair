@@ -2,7 +2,7 @@
 
 NAME=${1?Error: no name given}
 NAME2=${2?Error: no name given}
-# The NAME and NAME2 are the inputs for the pipeline, respectively. The NAME is using for Naming directory, file name and labelling whereas NAME2 is just for either labelling or raw file naming.
+# The NAME and NAME2 are the SRA to fastq converted inputs for the pipeline, respectively. The NAME is using for Naming directory, file name and labelling whereas NAME2 is just for either labelling or raw file naming.
 
 DIR="/cta/users/ardacetin/globalRepair/MelanomaPrediction/repair/XR-seqProtocolFile"
 
@@ -35,7 +35,7 @@ awk '{ if ($3-$2 == 26) { print } }' $DIR/$NAME/6_${NAME}_filtered_sorted.bed > 
 
 #	Downsampling
 
-#	The 7_${NAME}_cutadapt_sorted_26.bed is downlampled externally.
+#	The 7_${NAME}_cutadapt_sorted_26.bed is downsampled externally.
 
 sort -k1,1 -k2,2n $DIR/$NAME/SPO_${NAME}_18M_Melsubsampled.bed > $DIR/$NAME/7_${NAME}_resorted.bed
 
