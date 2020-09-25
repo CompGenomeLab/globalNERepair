@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#	$1 and $2 are the inputs given to the pipeline, respectively.
+#	$1 and $2 are the SRA to fastq converted inputs given to the pipeline, respectively.
 
 DIR="/cta/users/ardacetin/globalRepair/MelanomaPrediction/damageseq/damage-seqProtocolFile"
 
