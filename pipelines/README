@@ -1,6 +1,6 @@
 README
 
-The pipeline directory includes four seqeuncing technique are uploaded. 
+The pipeline directory, which includes four NGS methods, are uploaded. 
 These pipelines are wrote such a way that they could be used either for downsampling a BED file or just applying the protocol written inside the pipelines. 
 
-##The downsampling part need to be performed at the specified point inside the each type of sequencing method pipeline.
+##The downsampling part need to be performed at the specified step inside the each type of sequencing method pipeline.
