@@ -2,7 +2,7 @@
 
 DIR="/cta/users/ardacetin/globalRepair/MelanomaPrediction/chipseq/ChIP-seqProtocolFile"
 
-#	The NAME and NAME2 are the inputs for the pipeline, respectively. The NAME is using for Naming directory, file name and labelling whereas NAME2 is just for either labelling or raw file naming.
+#	The NAME and NAME2 are the SRA to fastq converted inputs for the pipeline, respectively. The NAME is using for Naming directory, file name and labelling whereas NAME2 is just for either labelling or raw file naming.
 
 NAME=${1?Error: Nothing has been given as an input!}
 NAME2=${2?Error: Nothing has been given as an input!}
