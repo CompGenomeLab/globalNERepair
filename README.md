@@ -24,12 +24,12 @@ NGStoolkit
 In order to download and run the NGStoolkit, the direction are taken by the author of this toolkit Ogun Adebali, PhD.
 >To place the source code of this repository in your path, please follow these commands:
 
-'''
+```
 cd ~
 git clone git@bitbucket.org:adebali/NGStoolkit.git
 cd NGStoolkit
 bash setup.sh
-'''
+```
 To reach the original page for NGStoolkit, you can visit [Ogun Adebali Github page] (https://github.com/adebali/NGStoolkit).
 
 ##  Work with your own data
