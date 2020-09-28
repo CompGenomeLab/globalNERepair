@@ -6,7 +6,7 @@ NAME2=${2?Error: no name given}
 #file name and labelling whereas NAME2 is just for either labelling or raw file naming.
 
 DIR="/cta/users/ardacetin/globalRepair/MelanomaPrediction/repair/XR-seqProtocolFile"
-# The user should replace the user's own fastq file location (PATH) with the DIR ("/cta/users/ardacetin/globalRepair/MelanomaPrediction/repair/XR-seqProtocolFile").
+# Users should use their own fastq file location (PATH) instead of above exemplified DIR ("/cta/users/ardacetin/globalRepair/MelanomaPrediction/repair/XR-seqProtocolFile").
 
 echo "Create directory at a given "DIR"
 echo $(cd $DIR && mkdir $NAME)
