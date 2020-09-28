@@ -35,7 +35,7 @@ rm $DIR/$NAME/5kb2_copy_edited.bed
 echo "Remove undesired chromosome sets from the sample bed file"
 grep -r chr $DIR/$NAME/4_${NAME}_cutadapt.bed | grep -v "chrY" > $DIR/$NAME/5_${NAME}_cutadapt_edited.bed
 
-echo "Sort bed file. Use -u to remove duplicates if necessary"
+echo "Sort bed file. Use -u to remove duplicates if necessary. Otherwide just use sort -k1,1 -k2,2n -k3,3n"
 sort -u -k1,1 -k2,2n -k3,3n $DIR/$NAME/5_${NAME}_cutadapt_edited.bed >$DIR/$NAME/6_${NAME}_filtered_sorted.bed
 
 echo "Get the read length distribution of the aligned and deduplicated reads"
