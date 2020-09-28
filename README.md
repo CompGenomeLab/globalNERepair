@@ -1,5 +1,6 @@
 # globalNERepair
-Instead of globalRepair Repository, I will use this!
+Instead of globalRepair Repository, I am using globalNERepair repository!
 
-###  This repository includes globalRepair project's report.
-For pipelines please visit my page.
+###  This repository includes globalRepair project's scripts and pipelines.
+For pipelines please visit "pipelines" folder.
+For Scripts please visit "Scripts" folder.
