@@ -53,6 +53,7 @@ random.seed()
 random.randrange(0, until_the_last_row)
 
 ```
+To reach the original page for python random package, you can visit [Python Documantation page] (https://docs.python.org/3/library/random.html).
 
 # Caution
 The pipelines and scripts were not for general usage purposes, they have been developed for achieving specific purpose hence, the line of codes can vary depending on the purpose.
