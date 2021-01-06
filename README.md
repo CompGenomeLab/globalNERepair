@@ -47,7 +47,7 @@ If you want to retrieve the existing data set from SRA please see the fastq-dump
 # Caution
 The pipelines and scripts were not for general usage purposes, they have been developed for achieving specific purpose hence, the line of codes can vary depending on the purpose.
 
-Even for reproducing the same experiements, you should be carefull to apply same pipelines or scripts for different sort of cell lines types. Although, four pipelines were used in the preprocessing of four NGS data (Xr-seq, damage-seq, DNase-seq, and ChIP-seq), within each pipeline the parameters for the tool commands varied. For example, you should aware whether the NGS datum layout is paired-ended or single-ended. 
+Even for reproducing the same experiements, you should be carefull to apply same pipelines or scripts for different sort of cell lines types. Although, four pipelines were used in the preprocessing of four NGS data (Xr-seq, damage-seq, DNase-seq, and ChIP-seq), within each pipeline the parameters for the tool commands varied. For example, you should aware whether the NGS datum layout is paired-ended or single-ended. Besides, you need to know wheter you should trimm or remove the adaptro completely from the data. 
 
 Also, depending on the sequencing data quality, deduplicates might need to be removed.
 
