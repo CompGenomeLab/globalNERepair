@@ -33,7 +33,7 @@ git clone git@bitbucket.org:adebali/NGStoolkit.git
 cd NGStoolkit
 bash setup.sh
 ```
-To reach the original page for NGStoolkit, you can visit [Ogun Adebali Github page] (https://github.com/adebali/NGStoolkit).
+To reach the original page for NGStoolkit, you can visit [Ogun Adebali Github page](https://github.com/adebali/NGStoolkit).
 
 ##  Work with your own data
 Below, instructions are exemplified based on "XR-seq pipeline editing" but they are also valid for other three NGS methods as well.
