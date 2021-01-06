@@ -44,12 +44,22 @@ Edit the My_XR-seq.sh and replace the SAMPLE variable with the base sample name 
 
 If you want to retrieve the existing data set from SRA please see the fastq-dump command and replace the SRA acccession number with the one of interest. If you use your own file please comment out that two lines in My_XR-seq.sh.
 
+In the project, un-subsampled and subsampled version of the data were used. The subsampling threshold was determined based on the total number of reads coming from the raw sequencing data and subsampling performed completely randomly. The python package "random" was used. Since each line represents a genomic coordinate and corresponding genetic information inside the .BED files, a python script selecting random rows was run and new subsampled_BED files was used for for the further experiements.
+
+```
+import random
+
+random.seed()
+random.randrange(0, until_the_last_row)
+
+```
+
 # Caution
 The pipelines and scripts were not for general usage purposes, they have been developed for achieving specific purpose hence, the line of codes can vary depending on the purpose.
 
-Even for reproducing the same experiements, you should be carefull to apply same pipelines or scripts for different sort of cell lines types. Although, four pipelines were used in the preprocessing of four NGS data (Xr-seq, damage-seq, DNase-seq, and ChIP-seq), within each pipeline the parameters for the tool commands varied. For example, you should aware whether the NGS datum layout is paired-ended or single-ended. Besides, you need to know wheter you should trimm or remove the adaptro completely from the data. 
+Even for reproducing the same experiements, you should be carefull to apply same pipelines or scripts for different sort of cell lines types. Although, four pipelines were used in the preprocessing of four NGS data (Xr-seq, damage-seq, DNase-seq, and ChIP-seq), within each pipeline the parameters for the tool commands varied. For example, you should aware whether the NGS datum layout is paired-ended or single-ended. Besides, you need to know wheter you should trimm or remove the adaptors completely from the data. 
 
-Also, depending on the sequencing data quality, deduplicates might need to be removed.
+Also, depending on the sequencing data quality, deduplicates might need to be removed and for those who would like to test the reprocubility of our work, please try to apply the same steps as much as possible. The most important difference could emerge at performing the subsampling step. Please read "Work wşth you owd data" section above to get the idea.
 
 ##  Authors
 Arda Cetin
