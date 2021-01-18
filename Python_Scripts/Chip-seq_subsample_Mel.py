@@ -1,14 +1,14 @@
 import pandas as pd
 import os
 
+#################################################
 # All ChIP-seq files should be at the same directory.
-# Path where the created files will be.
-path = '/cta/users/ardacetin/globalRepair/MelanomaPrediction/chipseq/ChIP-seqProtocolFile_4hr/'
-# ChIP-seq file name labels, in this case they are SRR IDs.
-histones = ["SRR227397_SRR227398.fastq","SRR227579_SRR227580.fastq","SRR568344_SRR568345.fastq"]
-
+path = '/cta/users/ardacetin/globalRepair/MelanomaPrediction/chipseq/ChIP-seqProtocolFile_4hr/'    # Path where the created files will be.
+histones = ["SRR227397_SRR227398.fastq","SRR227579_SRR227580.fastq","SRR568344_SRR568345.fastq"]   # ChIP-seq file name labels, in this case they are SRR IDs.
 subsample_n = 0	       # The number of reads which will be randomly picked.
 Min_read_number = 0    # The minimum tolerated read number for a file for not involving in downsampling process.
+##################################################
+
 
 for histone in histones:
 	os.system("grep -c '^' " + path + histone + "/4_" + histone + "_edited_sorted.bed > " + path + histone + "/5_" + histone + "_counts.txt") # Find read numbers.
@@ -23,5 +23,6 @@ for histone in histones:
 		rdm = data.sample(n=subsample_n, random_state=1)
 		rdm.to_csv(path + histone + '/SPO_' + histone +'_3M_Melsubsampled.bed', sep="\t", index=False)
 		
-		# The created file will have undesired characters and spacing. The below line of code is advised to be run individually.
+		# The created file may have undesired characters and spacing. The below line of code is advised to be run individually.
 		#os.system("sed 's/\"//g' " + path + histone + "/SPO_" + histone + "_12andhalfM_subsampled.bed > " + path + histone + "/SPO_" + histone + "_12andHalfM_subsampled.bed")
+		# or before "rdm.to_csv" step, apply "rdm.str.replace('"', '')" to discard the undesired or problemetic characters.
