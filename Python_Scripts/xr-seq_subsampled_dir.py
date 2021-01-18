@@ -12,15 +12,16 @@ dir_list = os.listdir(path)
 for SRA in dir_list:
     os.system("grep -c '^' " + path + SRA + "/6_" + SRA + "_filtered_sorted.bed > " + path + SRA + "/6_" + SRA + "_filtered_sorted_readCount.txt")
 
-    fl_p = open(path + SRA + "/6_" + SRA + "_filtered_sorted_readCount.txt","r")
-    output_p = int(fl_p.readline())
-    fl_p.close()
+    fl = open(path + SRA + "/6_" + SRA + "_filtered_sorted_readCount.txt","r")
+    output = int(fl.readline())
+    fl.close()
     os.system("rm " + path + SRA + "/6_" + SRA + "_filtered_sorted_readCount.txt")
+    if int(output) > Min_read_number:	# Check whether read number is higher than the given value. If so, downsample the corresponding file otherwise, skip it.
 
-    file_p = pd.read_csv(path + SRA + "/6_" + SRA + "_filtered_sorted.bed", sep="\t", index_col=False)
-    rdm_p = file_p.sample(n=2852000, random_state=1) #10349089
-    rdm_p.to_csv(path + SRA + "/SPO_" + SRA + "_3M_Melsubsampled.bed", sep="\t", index=False)
+            data = pd.read_csv(path + SRA + "/6_" + SRA + "_filtered_sorted.bed", sep="\t", index_col=False)
+            rdm = data.sample(n=subsample_n, random_state=1)
+            rdm.to_csv(path + SRA + "/SPO_" + SRA + "_3M_Melsubsampled.bed", sep="\t", index=False)
     
-    # The created file may have undesired characters and spacing. The below line of code is advised to be run individually.
-    #os.system("sed 's/\"//g' " + path + histone + "/SPO_" + histone + "_3M_Melsubsampled.bed > " + path + histone + "/SPO_" + histone + "_3M_subsampled.bed")
-    # or before "rdm.to_csv" step, apply "rdm.str.replace('"', '')" to discard the undesired or problemetic characters.
+            # The created file may have undesired characters and spacing. The below line of code is advised to be run individually.
+            #os.system("sed 's/\"//g' " + path + histone + "/SPO_" + histone + "_3M_Melsubsampled.bed > " + path + histone + "/SPO_" + histone + "_3M_subsampled.bed")
+            # or before "rdm.to_csv" step, apply "rdm.str.replace('"', '')" to discard the undesired or problemetic characters.
