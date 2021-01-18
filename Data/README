@@ -1,2 +1,3 @@
 This genome file is not alphanumerically sorted and only includes common chromosomes which is starting from 1 to "Y".
 The chromosome names are starting with a suffix "chr" at the before chromosome number.
+The whole genome is splitted into 5000 bases long bins.
