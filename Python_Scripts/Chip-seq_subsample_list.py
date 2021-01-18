@@ -24,5 +24,5 @@ for histone in histones:
 		rdm.to_csv(path + histone + '/SPO_' + histone +'_3M_Melsubsampled.bed', sep="\t", index=False)
 		
 		# The created file may have undesired characters and spacing. The below line of code is advised to be run individually.
-		#os.system("sed 's/\"//g' " + path + histone + "/SPO_" + histone + "_12andhalfM_subsampled.bed > " + path + histone + "/SPO_" + histone + "_12andHalfM_subsampled.bed")
+		# os.system("sed 's/\"//g' " + path + histone + "/SPO_" + histone + "_3M_Melsubsampled.bed > " + path + histone + "/SPO_" + histone + "_3M_subsampled.bed")
 		# or before "rdm.to_csv" step, apply "rdm.str.replace('"', '')" to discard the undesired or problemetic characters.
