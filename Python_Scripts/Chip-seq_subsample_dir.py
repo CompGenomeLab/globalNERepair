@@ -5,8 +5,8 @@ import os
 # All ChIP-seq files should be at the same directory.
 path = '/cta/users/ardacetin/globalRepair/MelanomaPrediction/chipseq/ChIP-seqProtocolFile_4hr/'    # Path where the created files will be.
 histones = ["SRR227397_SRR227398.fastq","SRR227579_SRR227580.fastq","SRR568344_SRR568345.fastq"]   # ChIP-seq file name labels, in this case they are SRR IDs.
-subsample_n = 0	       # The number of reads which will be randomly picked.
-Min_read_number = 0    # The minimum tolerated read number for a file for not involving in downsampling process.
+subsample_n = 17573000        # The number of reads which will be randomly picked.
+Min_read_number = 17572461    # The minimum tolerated read number for a file for not involving in downsampling process.
 ##################################################
 
 
