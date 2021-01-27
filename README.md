@@ -60,7 +60,7 @@ To reach the original page for  random package, you can visit [Python Documantat
 # Research Protocol
 
 You should know what sam, bam, and bed files are. [Too learn click](http://software.broadinstitute.org/software/igv/?q=book/export/html/16)
-To retrieve all the NGS data utilzied in the research please see the _Data_ section [below].
+To retrieve all the NGS data utilzied in the research please see the [Data](#Data) section below.
 
 1. Run XR-seq, ChIP-seq, DNase-seq, and damage-seq pipelines with appropriate PATH and file names.
 
@@ -146,7 +146,7 @@ ipynb-py-convert examples/plot.py examples/plot.ipynb
 
 This will turn markdown text into multiline strings ' _'''_ ' format. Moreover, after the conversion each Jupyter Notebooks cell as a "normal" python code line will have a marker "_# %%_". This indicates that until reaching another marker, all the codes within two markers previously belong in a single Jupyter Notebook cell.
 
-# [create an anchor](#Data)
+# Data
 The ChIP-seq data used in the project can be retrieved using the given ENCODE IDs.
 
 _Image_
