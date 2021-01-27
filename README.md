@@ -83,9 +83,9 @@ To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGen
  
 4. Convert read count values to [RPKM values](https://github.com/CompGenomeLab/globalNERepair/blob/master/Python_Scripts/RPKM.py).
 
-5. Collect the outputs of the each sequencing pipeline for filtering and normalizing.
+5. Collect the outputs of the each sequencing pipeline for filtering and [normalizing](https://github.com/CompGenomeLab/globalNERepair/blob/master/Python_Scripts/DMG_Replicate-A_filtering.py).
 
-  * Remove rows which are having zero RPKM value from the  damage-seq files, then normalize repair by damage.
+  * Remove rows which are having zero RPKM value from the  damage-seq files (filtering step), then normalize repair by damage.
   
   * Each row of XR-seq RPKM value should be divided by its corresponding RPKM row of the related damage-seq file.
   
@@ -192,3 +192,4 @@ Also, depending on the sequencing data quality, deduplicates might need to be re
 Arda Cetin
 
 To check out my [profile](https://github.com/ArdaCet)
+To reach me about any question please send me an [email](<ardacetin_work@hotmail.com>).
