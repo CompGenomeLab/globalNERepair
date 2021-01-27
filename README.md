@@ -5,7 +5,7 @@ This repository includes pipelines, python codes, and the NGS data used in the r
 This repository is developed for analyzing genome-wide four NGS datasets which I have utilized during my master's thesis. This repository is not only including preprocessing pipelines but also includes python scripts as well.
 
 # Project Aim
-Revealing one of the causes of genome-wide nucleotide excision repair heterogeneitiy mainly using histone markers.
+Revealing one of the causes of genome-wide nucleotide excision repair heterogeneity mainly using histone markers.
 
 # globalNERepair
 Instead of globalRepair Repository, I am using globalNERepair repository!
@@ -68,25 +68,25 @@ To retrieve all the NGS data utilzied in the research please see the [Data](#Dat
 
 1. Run XR-seq, ChIP-seq, DNase-seq, and damage-seq pipelines with appropriate PATH and file names.
 
-* In each pipeline, should be run from top to bottom for once to create the outputs. Then, the second run should performed but this time just before getting read count numbers (before the _bedtools intersect_) [subsample](#Work-with-your-own-data) your corresponding file according to the minimum read number which should be determined by looking through all the sequencing files' read numbers. Here, you need to check all XR-seq, ChIP-seq, DNase-seq, and damage-seq raw reads to see which file has the smallest read coverage in other words number of reads.
+ * In each pipeline, should be run from top to bottom for once to create the outputs. Then, the second run should performed but this time just before getting read count numbers (before the _bedtools intersect_) [subsample](#Work-with-your-own-data) your corresponding file according to the minimum read number which should be determined by looking through all the sequencing files' read numbers. Here, you need to check all XR-seq, ChIP-seq, DNase-seq, and damage-seq raw reads to see which file has the smallest read coverage in other words number of reads.
 
 2. Downsampling should be applied on all the files except the one having the lowest read count (see Python_scripts directory and [Work with your own data](#Work-with-your-own-data) headings at the [README](https://github.com/CompGenomeLab/globalNERepair/edit/master/README.md) page). The number of read sampling value should equal to the file including the smallest number of reads.
  
-* After downsampling the corresponding ".BED" file, find read overlaps using the subsampled data and continue to apply exact same steps as your first run.
+ * After downsampling the corresponding ".BED" file, find read overlaps using the subsampled data and continue to apply exact same steps as your first run.
  
 3. Convert read count values to RPKM values.
 
 4. Collect the outputs of the each sequencing pipeline for filtering and normalizing.
 
-* Remove rows which are having zero RPKM value from the  damage-seq files, then normalize repair by damage.
-* Each row of XR-seq RPKM value should be divided by its corresponding RPKM row of the related damage-seq file.
-** Each repair and its relavent damage type (UV damage types: Cisplatin, (6-4)PP) must be filtered and normalized during the filtering step.
-** e.g    XR-seq-(6-4)PP-repA / damage-seq-(6-4)PP-repA    XR-seq-(6-4)PP-repB / damage-seq-(6-4)PP-repB    XR-seq-Cisplatin-repA / damage-seq-Cisplatin-repA   and etc.
+ * Remove rows which are having zero RPKM value from the  damage-seq files, then normalize repair by damage.
+ * Each row of XR-seq RPKM value should be divided by its corresponding RPKM row of the related damage-seq file.
+  ** Each repair and its relavent damage type (UV damage types: Cisplatin, (6-4)PP) must be filtered and normalized during the filtering step.
+  ** e.g    XR-seq-(6-4)PP-repA / damage-seq-(6-4)PP-repA    XR-seq-(6-4)PP-repB / damage-seq-(6-4)PP-repB    XR-seq-Cisplatin-repA / damage-seq-Cisplatin-repA   and etc.
 
 5. Lastly, create a dataframe in which each column will be chromosome_name, position_start, position_end, XR-seq, damage-seq, ChIP-seq, and DNase-seq RPKM values, sequentially.
 
-* In most cases, there will be technical and/or biological repliciates of each sequencing in this case they should be sequentially followed. 
-** e.g    (6-4)PP_Repair_damage_normalized_repA   (6-4)PP_Repair_damage_normalized_RepB   (6-4)PP_Repair_damage_normalized_RepC   and so on.
+ * In most cases, there will be technical and/or biological repliciates of each sequencing in this case they should be sequentially followed. 
+  ** e.g    (6-4)PP_Repair_damage_normalized_repA   (6-4)PP_Repair_damage_normalized_RepB   (6-4)PP_Repair_damage_normalized_RepC   and so on.
 
 
 # Gene Annotation
