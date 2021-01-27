@@ -73,7 +73,7 @@ To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGen
 
 1. Run XR-seq, ChIP-seq, DNase-seq, and damage-seq pipelines with appropriate PATH and file names.
 
-2. Pipelines consist of aligning reads to the human reference genome (hg19), data formatting, mapping genomic positions on the 5kb divided reference genome for acquiring read count numbers, RPKM calculation, and data laballing.
+2. Pipelines consist of aligning reads to the human reference genome (hg19), data formatting, mapping genomic positions on the 5kb divided reference genome for acquiring read count numbers, [RPKM calculation](https://github.com/CompGenomeLab/globalNERepair/blob/master/Python_Scripts/RPKM.py), and data laballing.
 
   * In each pipeline, should be run from top to bottom for once to create the outputs. Then, the second run should performed but this time just before getting read count numbers (before the _bedtools intersect_) [subsample](#Work-with-your-own-data) your corresponding file according to the minimum read number which should be determined by looking through all the sequencing files' read numbers. Here, you need to check all XR-seq, ChIP-seq, DNase-seq, and damage-seq raw reads to see which file has the smallest read coverage in other words number of reads.
 
@@ -81,7 +81,7 @@ To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGen
  
   * After downsampling the corresponding [.BED](http://software.broadinstitute.org/software/igv/?q=book/export/html/16) file, find read overlaps using the subsampled data and continue to apply exact same steps as your first run.
  
-4. Convert read count values to RPKM values.
+4. Convert read count values to [RPKM values](https://github.com/CompGenomeLab/globalNERepair/blob/master/Python_Scripts/RPKM.py).
 
 5. Collect the outputs of the each sequencing pipeline for filtering and normalizing.
 
@@ -99,7 +99,7 @@ To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGen
   
      * e.g    (6-4)PP_Repair_damage_normalized_repA   (6-4)PP_Repair_damage_normalized_RepB   (6-4)PP_Repair_damage_normalized_RepC   and so on.
      
-7. Apply same subsampling steps again (1-6) for all NGS data but this time after subsampling the ".BED" file, for intersencting the downsampled file use gene annotation (Gene and Intergene region files) file which can be created by the Python script _Genes_Intergenes.ipynb_. For any information regarding the script and its format see section [Gene Annotation](#Gene-Annotation).
+7. Apply same subsampling steps again (1-6) for all NGS data but this time after subsampling the ".BED" file, for intersencting the downsampled file use gene annotation (Gene and Intergene region files) file which can be created by the Python script [_Genes_Intergenes_](https://github.com/CompGenomeLab/globalNERepair/tree/master/Python_Scripts/Genes_Intergenes.ipynb). For any information regarding the script and its format see section [Gene Annotation](#Gene-Annotation).
   * **Attention!** The bedtools intersect step for gene annotation needs 4 files, which can be created using the _Genes_Intergenes.ipynb_, not the 5kb divided human reference genome. Therefore, user should repeat the same step for four times for each sequencing type and if there are replicates then four times for them too.
     ** For XR-seq-(6-4)PP-repA, map the reads on three gene and one intergenes file. So, use that four files as a a reference genome file.
 
