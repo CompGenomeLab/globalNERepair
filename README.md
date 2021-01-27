@@ -11,9 +11,9 @@ Revealing one of the causes of genome-wide nucleotide excision repair heterogene
 Instead of globalRepair Repository, I am using globalNERepair repository!
 
 ###  This repository includes globalRepair project's scripts and pipelines.
-For pipelines, please visit "pipelines" folder.
+For pipelines, please visit [NGS preprocessesing Pipelines](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines) folder.
 
-For Scripts, please visit "Python_Scripts" [Python folder](#Python_Scripts) folder.
+For Scripts, please visit [Python scripts](https://github.com/CompGenomeLab/globalNERepair/tree/master/Python_Scripts) folder.
 
 ##  Setup
 Custom setup assumes that you have the necessary programs installed and they are exectuble in your $PATH.
@@ -64,7 +64,12 @@ To reach the original page for  random package, you can visit [Python Documantat
 # Research Protocol
 
 You should know what sam, bam, and bed files are. [Too learn click](http://software.broadinstitute.org/software/igv/?q=book/export/html/16)
+
 To retrieve all the NGS data utilzied in the research please see the [Data](#Data) section below.
+
+To go to the python codes for RPKM calculation, subsampling, gene annotation, and normalization please [click](https://github.com/CompGenomeLab/globalNERepair/tree/master/Python_Scripts).
+
+To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines), [damage-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines), [ChIP-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines), and [DNase-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines) 
 
 1. Run XR-seq, ChIP-seq, DNase-seq, and damage-seq pipelines with appropriate PATH and file names.
 
