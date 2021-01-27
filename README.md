@@ -48,7 +48,7 @@ Edit the My_XR-seq.sh and replace the SAMPLE variable with the base sample name 
 
 If you want to retrieve the existing data set from SRA please see the fastq-dump command and replace the SRA acccession number with the one of interest. If you use your own file please comment out that two lines in My_XR-seq.sh.
 
-In the project, un-subsampled and subsampled version of the data were used. The subsampling threshold was determined based on the total number of reads coming from the raw sequencing data and subsampling performed completely randomly. The python package "random" was used. Since each line represents a genomic coordinate and corresponding genetic information inside the .BED files, a python script selecting random rows was run and new subsampled_BED files was used for for the further experiements.
+In the project, un-subsampled and subsampled version of the data were used. The subsampling threshold was determined based on the total number of reads coming from the raw sequencing data and subsampling performed completely randomly. The build-in python package _sample_ was used. Since each line represents a genomic coordinate and corresponding genetic information inside the .BED files, a [python script](https://github.com/CompGenomeLab/globalNERepair/tree/master/Python_Scripts) selecting random rows was run and new subsampled ".BED" files was then used for for the further experiements.
 
 >_"sample"_ is a build-in python package which accepts dataframe.
 
