@@ -192,4 +192,4 @@ Also, depending on the sequencing data quality, deduplicates might need to be re
 Arda Cetin
 
 To check out my [profile](https://github.com/ArdaCet)
-To reach me about any question please send me an [email](<ardacetin_work@hotmail.com>).
+To reach me about any question please send me an [email](mailto:ardacetin_work@hotmail.com).
