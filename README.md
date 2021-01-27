@@ -167,10 +167,6 @@ The gene annotation GTF file includes transcripts and gene information. It was u
 
 >Go to its original ftp source: ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/
 
-or 
-
->Directly download from my github [Data folder.](https://github.com/CompGenomeLab/globalNERepair/blob/master/Data/Homo_sapiens_Hg19)
-
 The ChIP-seq data used in the project can be retrieved using the given ENCODE IDs.
 
 ![image](https://user-images.githubusercontent.com/57831340/105982928-0421de00-60a9-11eb-9745-4248b874e56e.png)
