@@ -58,7 +58,7 @@ ran_sampled = data.sample(n=sampling, random_state=seed_num)
 To reach the original page for  random package, you can visit [Python Documantation page](https://docs.python.org/3/library/random.html).
 
 # Gene Annotation
-For retrieveing the hg19 gtf file manually [link](ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz)
+For retrieveing the hg19 gtf file manually [link] (ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz)
 
 File name is _Homo_sapiens.GRCh37.87.gtf.gz_
 
@@ -113,7 +113,7 @@ ipynb-py-convert examples/plot.py examples/plot.ipynb
 ```
 
 
-This will turn markdown text into multiline strings " _'''_ " format. Moreover, after the conversion each Jupyter Notebooks cell as a "normal" python code line will have a marker "_# %%_". This indicates that until reaching another marker, all the codes within two markers previously belong in a single Jupyter Notebook cell.
+This will turn markdown text into multiline strings ' _'''_ ' format. Moreover, after the conversion each Jupyter Notebooks cell as a "normal" python code line will have a marker "_# %%_". This indicates that until reaching another marker, all the codes within two markers previously belong in a single Jupyter Notebook cell.
 
 # Caution
 The pipelines and scripts were not for general usage purposes, they have been developed for achieving specific purpose hence, the line of codes can vary depending on the purpose.
