@@ -46,7 +46,7 @@ If you want to retrieve the existing data set from SRA please see the fastq-dump
 
 In the project, un-subsampled and subsampled version of the data were used. The subsampling threshold was determined based on the total number of reads coming from the raw sequencing data and subsampling performed completely randomly. The python package "random" was used. Since each line represents a genomic coordinate and corresponding genetic information inside the .BED files, a python script selecting random rows was run and new subsampled_BED files was used for for the further experiements.
 
-_"sample"_ is a build-in python package which accepts dataframe.
+>_"sample"_ is a build-in python package which accepts dataframe.
 
 ```
 seed_num = 1
@@ -64,9 +64,9 @@ To retrieve all the NGS data utilzied in the research please see the [Data](#Dat
 
 1. Run XR-seq, ChIP-seq, DNase-seq, and damage-seq pipelines with appropriate PATH and file names.
 
-* In each pipeline, should be run from top to bottom for once to create the outputs. Then, the second run should performed but this time just before getting read count numbers (before the _bedtools intersect_) subsample your corresponding file according to the minimum read number which should be determined by looking through all the sequencing files' read numbers. Here, you need to check all XR-seq, ChIP-seq, DNase-seq, and damage-seq raw reads to see which file has the smallest read coverage in other words number of reads.
+* In each pipeline, should be run from top to bottom for once to create the outputs. Then, the second run should performed but this time just before getting read count numbers (before the _bedtools intersect_) [subsample](#Work-with-your-own-data) your corresponding file according to the minimum read number which should be determined by looking through all the sequencing files' read numbers. Here, you need to check all XR-seq, ChIP-seq, DNase-seq, and damage-seq raw reads to see which file has the smallest read coverage in other words number of reads.
 
-2. Downsampling should be applied on all the files except the one having the lowest read count (see Python_scripts directory and _Work with your own data_ headings at the [README](https://github.com/CompGenomeLab/globalNERepair/edit/master/README.md) page). The number of read sampling value should equal to the file including the smallest number of reads.
+2. Downsampling should be applied on all the files except the one having the lowest read count (see Python_scripts directory and [Work with your own data](#Work-with-your-own-data) headings at the [README](https://github.com/CompGenomeLab/globalNERepair/edit/master/README.md) page). The number of read sampling value should equal to the file including the smallest number of reads.
  
 * After downsampling the corresponding ".BED" file, find read overlaps using the subsampled data and continue to apply exact same steps as your first run.
  
@@ -95,7 +95,7 @@ File name is _Homo_sapiens.GRCh37.87.gtf.gz_
 
 There are various ways to retrieve the data but personally best bets in terms of easiness and conciseness would be:
 
-Using wget:
+>Using wget:
 ```
 import wget
 
@@ -104,7 +104,7 @@ wget.download(gtf_link)
 
 ```
 
-Using urllib2:
+>Using urllib2:
 ```
 import urllib2
 
@@ -114,7 +114,7 @@ the_page = response.read()
 
 ```
 
-After downloading or directly reading the gtf file at the desired _"PATH"_, if necessary extract the gtf file using:
+>If necessary extract the gtf file using:
 
 ```
 from sh import gunzip
@@ -128,17 +128,17 @@ The script has an extension _".ipynb"_ meaning that it was written in the Jupyte
 
 If you want to work on the "_Genes_Intergenes.ipynb_" as a python file, you can convert it using:
 
-First install required packages and follow the guide:
+>First install required packages and follow the guide:
 ```
 pip install ipynb-py-convert
 ```
 
-Then run the below line of code:
+>Then run the below line of code:
 ```
 ipynb-py-convert examples/plot.ipynb examples/plot.py
 ```
 
-Or you may want to convert python script into a Jupyter Notebook file use:
+>Or you may want to convert python script into a Jupyter Notebook file use:
 ```
 ipynb-py-convert examples/plot.py examples/plot.ipynb
 ```
@@ -161,7 +161,7 @@ The pipelines and scripts were not for general usage purposes, they have been de
 
 Even for reproducing the same experiements, you should be carefull to apply same pipelines or scripts for different sort of cell lines types. Although, four pipelines were used in the preprocessing of four NGS data (Xr-seq, damage-seq, DNase-seq, and ChIP-seq), within each pipeline the parameters for the tool commands varied. For example, you should aware whether the NGS datum layout is paired-ended or single-ended. Besides, you need to know wheter you should trimm or remove the adaptors completely from the data. 
 
-Also, depending on the sequencing data quality, deduplicates might need to be removed and for those who would like to test the reprocubility of our work, please try to apply the same steps as much as possible. The most important difference could emerge at performing the subsampling step. Please read "Work wşth you owd data" section above to get the idea.
+Also, depending on the sequencing data quality, deduplicates might need to be removed and for those who would like to test the reproducibility of our work, please try to apply the same steps as much as possible. The most important difference could emerge at performing the subsampling step. Please read [Work wit your own data](#Work-with-your-own-data) section above to get the idea.
 
 ##  Authors
 Arda Cetin
