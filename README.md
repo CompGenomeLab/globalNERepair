@@ -188,9 +188,12 @@ Even for reproducing the same experiements, you should be carefull to apply same
 
 Also, depending on the sequencing data quality, deduplicates might need to be removed and for those who would like to test the reproducibility of our work, please try to apply the same steps as much as possible. The most important difference could emerge at performing the subsampling step. Please read [Work with your own data](#Work-with-your-own-data) section above to get the idea.
 
-##  Authors
+#  Author
 Arda Cetin
 
 To check out my [profile](https://github.com/ArdaCet)
 
 To reach me about any question please send me an [email](mailto:ardacetin_work@hotmail.com).
+
+# Licence
+This project is licensed under the MIT License [see](https://github.com/CompGenomeLab/globalNERepair/edit/master/LICENSE).
