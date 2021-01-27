@@ -13,20 +13,20 @@ Instead of globalRepair Repository, I am using globalNERepair repository!
 ###  This repository includes globalRepair project's scripts and pipelines.
 For pipelines, please visit "pipelines" folder.
 
-For Scripts, please visit "Python_Scripts" folder.
+For Scripts, please visit "Python_Scripts" [Python folder](#Python_Scripts) folder.
 
 ##  Setup
 Custom setup assumes that you have the necessary programs installed and they are exectuble in your $PATH.
 
 The list of the necessary programs are:
 
-Bowtie2
-cutadapt
-sra toolkit
-samtools
-bedtools
-ucsc tools
-NGStoolkit
+* Bowtie2
+* cutadapt
+* sra toolkit
+* samtools
+* bedtools
+* ucsc tools
+* NGStoolkit
 
 In order to download and run the NGStoolkit, the direction are taken by the author of this toolkit Ogun Adebali, PhD.
 >To place the source code of this repository in your path, please follow these commands:
@@ -72,7 +72,7 @@ To retrieve all the NGS data utilzied in the research please see the [Data](#Dat
 
 2. Downsampling should be applied on all the files except the one having the lowest read count (see Python_scripts directory and [Work with your own data](#Work-with-your-own-data) headings at the [README](https://github.com/CompGenomeLab/globalNERepair/edit/master/README.md) page). The number of read sampling value should equal to the file including the smallest number of reads.
  
-  * After downsampling the corresponding ".BED" file, find read overlaps using the subsampled data and continue to apply exact same steps as your first run.
+  * After downsampling the corresponding [.BED](http://software.broadinstitute.org/software/igv/?q=book/export/html/16) file, find read overlaps using the subsampled data and continue to apply exact same steps as your first run.
  
 3. Convert read count values to RPKM values.
 
