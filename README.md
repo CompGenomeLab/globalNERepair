@@ -58,7 +58,7 @@ ran_sampled = data.sample(n=sampling, random_state=seed_num)
 To reach the original page for  random package, you can visit [Python Documantation page](https://docs.python.org/3/library/random.html).
 
 # Gene Annotation
-For retrieveing the hg19 gtf file manually [link] (ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz)
+For retrieveing the hg19 gtf file manually [link](ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz)
 
 File name is _Homo_sapiens.GRCh37.87.gtf.gz_
 
