@@ -42,7 +42,7 @@ To reach the original page for NGStoolkit, you can visit [Ogun Adebali Github pa
 ##  Work with your own data
 Below, instructions are exemplified based on "XR-seq pipeline editing" but they are also valid for other three NGS methods as well.
 
-Irrespective of the any NGS methods (XR-seq, damage-seq, DNase-seq, or ChIP-seq) for preprocessing you should move your .fastq file into the data directory.
+Irrespective of the any NGS methods ([XR-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_XR_seq.sh), [damage-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_Damage_seq.sh), [ChIP-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_Chip_seq.sh) or [DNase-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_DNAse_seq.sh) ) for preprocessing you should move your .fastq file into the data directory.
 
 Edit the My_XR-seq.sh and replace the SAMPLE variable with the base sample name in your file. For example if you file is named as myFile.fastq the base name will be myFile.
 
@@ -69,7 +69,7 @@ To retrieve all the NGS data utilzied in the research please see the [Data](#Dat
 
 To go to the python codes for RPKM calculation, subsampling, gene annotation, and normalization please [click](https://github.com/CompGenomeLab/globalNERepair/tree/master/Python_Scripts).
 
-To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines), [damage-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines), [ChIP-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines), and [DNase-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines) 
+To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_XR_seq.sh), [damage-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_Damage_seq.sh), [ChIP-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_Chip_seq.sh), and [DNase-seq](https://github.com/CompGenomeLab/globalNERepair/tree/master/pipelines/My_DNAse_seq.sh) 
 
 1. Run XR-seq, ChIP-seq, DNase-seq, and damage-seq pipelines with appropriate PATH and file names.
 
