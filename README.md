@@ -79,14 +79,18 @@ To retrieve all the NGS data utilzied in the research please see the [Data](#Dat
 4. Collect the outputs of the each sequencing pipeline for filtering and normalizing.
 
   * Remove rows which are having zero RPKM value from the  damage-seq files, then normalize repair by damage.
+  
   * Each row of XR-seq RPKM value should be divided by its corresponding RPKM row of the related damage-seq file.
-     ** Each repair and its relavent damage type (UV damage types: Cisplatin, (6-4)PP) must be filtered and normalized during the filtering step.
-     ** e.g    XR-seq-(6-4)PP-repA / damage-seq-(6-4)PP-repA    XR-seq-(6-4)PP-repB / damage-seq-(6-4)PP-repB    XR-seq-Cisplatin-repA / damage-seq-Cisplatin-repA   and etc.
+  
+     * Each repair and its relavent damage type (UV damage types: Cisplatin, (6-4)PP) must be filtered and normalized during the filtering step.
+     
+     * e.g    XR-seq-(6-4)PP-repA / damage-seq-(6-4)PP-repA    XR-seq-(6-4)PP-repB / damage-seq-(6-4)PP-repB    XR-seq-Cisplatin-repA / damage-seq-Cisplatin-repA and etc.
 
 5. Lastly, create a dataframe in which each column will be chromosome_name, position_start, position_end, XR-seq, damage-seq, ChIP-seq, and DNase-seq RPKM values, sequentially.
 
   * In most cases, there will be technical and/or biological repliciates of each sequencing in this case they should be sequentially followed. 
-     ** e.g    (6-4)PP_Repair_damage_normalized_repA   (6-4)PP_Repair_damage_normalized_RepB   (6-4)PP_Repair_damage_normalized_RepC   and so on.
+  
+     * e.g    (6-4)PP_Repair_damage_normalized_repA   (6-4)PP_Repair_damage_normalized_RepB   (6-4)PP_Repair_damage_normalized_RepC   and so on.
 
 
 # Gene Annotation
