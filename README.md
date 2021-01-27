@@ -1,3 +1,7 @@
+Hello all,
+
+This repository includes pipelines, python codes, and the NGS data used in the research project. 
+
 This repository is developed for analyzing genome-wide four NGS datasets which I have utilized during my master's thesis. This repository is not only including preprocessing pipelines but also includes python scripts as well.
 
 # Project Aim
