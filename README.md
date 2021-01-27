@@ -73,15 +73,17 @@ To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGen
 
 1. Run XR-seq, ChIP-seq, DNase-seq, and damage-seq pipelines with appropriate PATH and file names.
 
+2. Pipelines consist of aligning reads to the human reference genome (hg19), data formatting, mapping genomic positions on the 5kb divided reference genome for acquiring read count numbers, RPKM calculation, and data laballing.
+
   * In each pipeline, should be run from top to bottom for once to create the outputs. Then, the second run should performed but this time just before getting read count numbers (before the _bedtools intersect_) [subsample](#Work-with-your-own-data) your corresponding file according to the minimum read number which should be determined by looking through all the sequencing files' read numbers. Here, you need to check all XR-seq, ChIP-seq, DNase-seq, and damage-seq raw reads to see which file has the smallest read coverage in other words number of reads.
 
-2. Downsampling should be applied on all the files except the one having the lowest read count (see Python_scripts directory and [Work with your own data](#Work-with-your-own-data) headings at the [README](https://github.com/CompGenomeLab/globalNERepair/edit/master/README.md) page). The number of read sampling value should equal to the file including the smallest number of reads.
+3. Downsampling should be applied on all the files except the one having the lowest read count (see Python_scripts directory and [Work with your own data](#Work-with-your-own-data) headings at the [README](https://github.com/CompGenomeLab/globalNERepair/edit/master/README.md) page). The number of read sampling value should equal to the file including the smallest number of reads.
  
   * After downsampling the corresponding [.BED](http://software.broadinstitute.org/software/igv/?q=book/export/html/16) file, find read overlaps using the subsampled data and continue to apply exact same steps as your first run.
  
-3. Convert read count values to RPKM values.
+4. Convert read count values to RPKM values.
 
-4. Collect the outputs of the each sequencing pipeline for filtering and normalizing.
+5. Collect the outputs of the each sequencing pipeline for filtering and normalizing.
 
   * Remove rows which are having zero RPKM value from the  damage-seq files, then normalize repair by damage.
   
@@ -91,12 +93,15 @@ To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGen
      
      * e.g    XR-seq-(6-4)PP-repA / damage-seq-(6-4)PP-repA    XR-seq-(6-4)PP-repB / damage-seq-(6-4)PP-repB    XR-seq-Cisplatin-repA / damage-seq-Cisplatin-repA and etc.
 
-5. Lastly, create a dataframe in which each column will be chromosome_name, position_start, position_end, XR-seq, damage-seq, ChIP-seq, and DNase-seq RPKM values, sequentially.
+6. Creating a dataframe in which each column will be chromosome_name, position_start, position_end, XR-seq, damage-seq, ChIP-seq, and DNase-seq RPKM values, sequentially.
 
   * In most cases, there will be technical and/or biological repliciates of each sequencing in this case they should be sequentially followed. 
   
      * e.g    (6-4)PP_Repair_damage_normalized_repA   (6-4)PP_Repair_damage_normalized_RepB   (6-4)PP_Repair_damage_normalized_RepC   and so on.
-
+     
+7. Apply same subsampling steps again (1-6) for all NGS data but this time after subsampling the ".BED" file, for intersencting the downsampled file use gene annotation (Gene and Intergene region files) file which can be created by the Python script _Genes_Intergenes.ipynb_. For any information regarding the script and its format see section [Gene Annotation](#Gene-Annotation).
+  * **Attention!** The bedtools intersect step for gene annotation needs 4 files, which can be created using the _Genes_Intergenes.ipynb_, not the 5kb divided human reference genome. Therefore, user should repeat the same step for four times for each sequencing type and if there are replicates then four times for them too.
+    ** For XR-seq-(6-4)PP-repA, map the reads on three gene and one intergenes file. So, use that four files as a a reference genome file.
 
 # Gene Annotation
 For retrieveing the hg19 gtf file manually by downloading it from its original source please go to the link below (or see [section Data](#Data)):
@@ -136,7 +141,7 @@ from sh import gunzip
 gunzip('/content/Homo_sapiens.GRCh37.87.gtf.gz')
 ```
 
-Then, you can apply the _Genes_Intergenes_ python script in order to get the exact data we have obtained and used for data analysis in the research or you can use this script and chage it depending on your research purpose. 
+Then, you can apply the [_Genes_Intergenes_](https://github.com/CompGenomeLab/globalNERepair/tree/master/Python_Scripts/Genes_Intergenes.ipynb) python script in order to get the exact data we have obtained and used for data analysis in the research or you can use this script and chage it depending on your research purpose. 
 
 The script has an extension _".ipynb"_ meaning that it was written in the Jupyter Notebooks using google coolab. The purpose of usng the google coolab was its convenience in storing data at Google Drive and avaialability of writting and running codes seperately and seeing outputs nicely and continously.
 
