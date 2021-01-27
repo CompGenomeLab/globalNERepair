@@ -190,3 +190,5 @@ Also, depending on the sequencing data quality, deduplicates might need to be re
 
 ##  Authors
 Arda Cetin
+
+To check out my [profile](https://github.com/ArdaCet)
