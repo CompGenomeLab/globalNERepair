@@ -99,7 +99,8 @@ To go to the preprocessing pipelines for the [XR-seq](https://github.com/CompGen
 
 
 # Gene Annotation
-For retrieveing the hg19 gtf file manually please go to the link below:
+For retrieveing the hg19 gtf file manually by downloading it from its original source please go to the link below (or see [section Data](#Data)):
+
 ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/
 
 and download the file with a name:
@@ -162,6 +163,14 @@ This will turn markdown text into multiline strings ' _'''_ ' format. Moreover, 
 # Data
 The Hg19 genome which is divided into 5000 bases can be acces through [here](https://github.com/CompGenomeLab/globalNERepair/blob/master/Data/5kb_divided_hg19.bed).
 
+The gene annotation GTF file includes transcripts and gene information. It was used to map repair, damage, histone markers (ChIP-seq), and DNase-seq data on the genes and intergens for better interpretation of biological knowledge from the analysis. To download the GTF file:
+
+>Go to its original ftp source: ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/
+
+or 
+
+>Directly download from my github [Data folder.](https://github.com/CompGenomeLab/globalNERepair/blob/master/Data/Homo_sapiens_Hg19)
+
 The ChIP-seq data used in the project can be retrieved using the given ENCODE IDs.
 
 ![image](https://user-images.githubusercontent.com/57831340/105982928-0421de00-60a9-11eb-9745-4248b874e56e.png)
@@ -176,7 +185,7 @@ The pipelines and scripts were not for general usage purposes, they have been de
 
 Even for reproducing the same experiements, you should be carefull to apply same pipelines or scripts for different sort of cell lines types. Although, four pipelines were used in the preprocessing of four NGS data (Xr-seq, damage-seq, DNase-seq, and ChIP-seq), within each pipeline the parameters for the tool commands varied. For example, you should aware whether the NGS datum layout is paired-ended or single-ended. Besides, you need to know wheter you should trimm or remove the adaptors completely from the data. 
 
-Also, depending on the sequencing data quality, deduplicates might need to be removed and for those who would like to test the reproducibility of our work, please try to apply the same steps as much as possible. The most important difference could emerge at performing the subsampling step. Please read [Work wit your own data](#Work-with-your-own-data) section above to get the idea.
+Also, depending on the sequencing data quality, deduplicates might need to be removed and for those who would like to test the reproducibility of our work, please try to apply the same steps as much as possible. The most important difference could emerge at performing the subsampling step. Please read [Work with your own data](#Work-with-your-own-data) section above to get the idea.
 
 ##  Authors
 Arda Cetin
