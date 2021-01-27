@@ -160,6 +160,8 @@ ipynb-py-convert examples/plot.py examples/plot.ipynb
 This will turn markdown text into multiline strings ' _'''_ ' format. Moreover, after the conversion each Jupyter Notebooks cell as a "normal" python code line will have a marker "_# %%_". This indicates that until reaching another marker, all the codes within two markers previously belong in a single Jupyter Notebook cell.
 
 # Data
+The Hg19 genome which is divided into 5000 bases can be acces through [here](https://github.com/CompGenomeLab/globalNERepair/blob/master/Data/5kb_divided_hg19.bed).
+
 The ChIP-seq data used in the project can be retrieved using the given ENCODE IDs.
 
 ![image](https://user-images.githubusercontent.com/57831340/105982928-0421de00-60a9-11eb-9745-4248b874e56e.png)
