@@ -149,7 +149,7 @@ This will turn markdown text into multiline strings ' _'''_ ' format. Moreover, 
 # Data
 The ChIP-seq data used in the project can be retrieved using the given ENCODE IDs.
 
-_Image_
+![image](https://user-images.githubusercontent.com/57831340/105982928-0421de00-60a9-11eb-9745-4248b874e56e.png)
 
 In GM12878, damage-seq and XR-seq 1.5hr data can be retrieved from GSE98025 and GSE82213, respectively. NHF1 cell line’s XR-seq data generated after one-hour UV exposure are from GSE67941 and DNA repair after four hours XR-seq data are from GSE76391. The both 1- and 4-hours UV treatment data on NHF1 cells line could be accessed at GSE98025.
 
