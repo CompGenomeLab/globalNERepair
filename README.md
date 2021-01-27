@@ -46,14 +46,74 @@ If you want to retrieve the existing data set from SRA please see the fastq-dump
 
 In the project, un-subsampled and subsampled version of the data were used. The subsampling threshold was determined based on the total number of reads coming from the raw sequencing data and subsampling performed completely randomly. The python package "random" was used. Since each line represents a genomic coordinate and corresponding genetic information inside the .BED files, a python script selecting random rows was run and new subsampled_BED files was used for for the further experiements.
 
-```
-import random
+_"sample"_ is a build-in python package which accepts dataframe.
 
-random.seed()
-random.randrange(0, until_the_last_row)
+```
+seed_num = 1
+sampling = 2458200
+
+ran_sampled = data.sample(n=sampling, random_state=seed_num)
 
 ```
 To reach the original page for  random package, you can visit [Python Documantation page](https://docs.python.org/3/library/random.html).
+
+# Gene Annotation
+For retrieveing the hg19 gtf file manually [link](ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz)
+
+File name is _Homo_sapiens.GRCh37.87.gtf.gz_
+
+There are various ways to retrieve the data but personally best bets in terms of easiness and conciseness would be:
+
+Using wget:
+```
+import wget
+
+gtf_link = 'ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz'
+wget.download(gtf_link)
+
+```
+
+Using urllib2:
+```
+import urllib2
+
+gtf_req = urllib2.Request('ftp://ftp.ensembl.org/pub/grch37/release-98/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz')
+web_response = urllib2.urlopen(gtf_req)
+the_page = response.read()
+
+```
+
+After downloading or directly reading the gtf file at the desired _"PATH"_, if necessary extract the gtf file using:
+
+```
+from sh import gunzip
+
+gunzip('/content/Homo_sapiens.GRCh37.87.gtf.gz')
+```
+
+Then, you can apply the _Genes_Intergenes_ python script in order to get the exact data we have obtained and used for data analysis in the research or you can use this script and chage it depending on your research purpose. 
+
+The script has an extension _".ipynb"_ meaning that it was written in the Jupyter Notebooks using google coolab. The purpose of usng the google coolab was its convenience in storing data at Google Drive and avaialability of writting and running codes seperately and seeing outputs nicely and continously.
+
+If you want to work on the "_Genes_Intergenes.ipynb_" as a python file, you can convert it using:
+
+First install required packages and follow the guide:
+```
+pip install ipynb-py-convert
+```
+
+Then run the below line of code:
+```
+ipynb-py-convert examples/plot.ipynb examples/plot.py
+```
+
+Or you may want to convert python script into a Jupyter Notebook file use:
+```
+ipynb-py-convert examples/plot.py examples/plot.ipynb
+```
+
+
+This will turn markdown text into multiline strings " _'''_ " format. Moreover, after the conversion each Jupyter Notebooks cell as a "normal" python code line will have a marker "_# %%_". This indicates that until reaching another marker, all the codes within two markers previously belong in a single Jupyter Notebook cell.
 
 # Caution
 The pipelines and scripts were not for general usage purposes, they have been developed for achieving specific purpose hence, the line of codes can vary depending on the purpose.
